@@ -24,7 +24,7 @@ const geometry = new THREE.SphereGeometry( .5, 64, 64 );
 // Materials
 
 const material = new THREE.MeshStandardMaterial()
-material.metalness = 0.7
+material.metalness = 0.4
 material.roughness = 0.2
 material.normalMap = normalTexture
 
@@ -36,11 +36,11 @@ scene.add(sphere)
 
 // Lights
 
-const pointLight = new THREE.PointLight(0xffffff, 0.1)
+/*onst pointLight = new THREE.PointLight(0xffffff, 0.1)
 pointLight.position.x = 2
 pointLight.position.y = 3
 pointLight.position.z = 4
-scene.add(pointLight)
+scene.add(pointLight)*/
 
 // Light 2
 
@@ -122,8 +122,8 @@ camera.position.z = 2
 scene.add(camera)
 
 // Controls
-// const controls = new OrbitControls(camera, canvas)
-// controls.enableDamping = true
+const controls = new OrbitControls(camera, canvas)
+controls.enableDamping = true
 
 /**
  * Renderer
