@@ -66,7 +66,7 @@ scene.add(pointLightHelper2)
 // Light 3
 
 const pointLight3 = new THREE.PointLight(0xff0000, 2)
-pointLight3.position.set(-1.86,1,-1.65)
+pointLight3.position.set(3.75,1,-3.75)
 pointLight3.intensity = 1
 
 scene.add(pointLight3)
@@ -79,7 +79,7 @@ light3.add(pointLight3.position, 'z').min(-3).max(3).step(0.01)
 light3.add(pointLight3, 'intensity').min(0).max(10).step(0.01)
 
 const light3Color = {
-    color: 0xff0000
+    color: 0xc303ff
 }
 light3.addColor(light3Color, 'color')
     .onChange(() => {
@@ -139,6 +139,20 @@ renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 /**
  * Animate
  */
+document.addEventListener('mousemove', onDocumentMouseMove)
+
+let mouseX = 0
+let mouseY = 0
+
+let targetX = 0
+let targetY = 0
+
+const windowX = window.innerWidth / 2;
+const windowY = window.innerHeight / 2;
+function onDocumentMouseMove(event) {
+    mouseX = (event.clientX - windowX)
+    mouseY = (event.clientY - windowY)
+}
 
 const clock = new THREE.Clock()
 
