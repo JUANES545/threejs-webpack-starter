@@ -9,7 +9,11 @@ body
 {
     height: 100vh;
     font-family: 'Poppins';
-    background: rgb(51, 50, 50);
+    background: rgb(24, 24, 24);
+}
+
+body {
+    overflow-x: hidden;
 }
 
 .webgl

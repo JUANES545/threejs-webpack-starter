@@ -19,7 +19,7 @@ const scene = new THREE.Scene()
 
 // Objects
 //const geometry = new THREE.TorusGeometry( .7, .2, 16, 100 );
-const geometry = new THREE.SphereGeometry( .5, 64, 64 );
+const geometry = new THREE.SphereGeometry( .8, 64, 64 );
 //const geometry = new THREE.BoxGeometry(1,1,1);
 
 // Materials
@@ -60,8 +60,8 @@ light2.add(pointLight2.position, 'z').min(-3).max(3).step(0.01)
 light2.add(pointLight2, 'intensity').min(0).max(10).step(0.01)
 
 // Visualize helper to detect the light position
-const pointLightHelper2 = new THREE.PointLightHelper(pointLight2, 1)
-scene.add(pointLightHelper2)
+//const pointLightHelper2 = new THREE.PointLightHelper(pointLight2, 1)
+//scene.add(pointLightHelper2)
 
 // Light 3
 
@@ -86,8 +86,8 @@ light3.addColor(light3Color, 'color')
         pointLight3.color.set(light3Color.color)
     })
 
-const pointLightHelper3 = new THREE.PointLightHelper(pointLight3, 1)
-scene.add(pointLightHelper3)
+//const pointLightHelper3 = new THREE.PointLightHelper(pointLight3, 1)
+//scene.add(pointLightHelper3)
 
 /**
  * Sizes
@@ -153,6 +153,12 @@ function onDocumentMouseMove(event) {
     mouseX = (event.clientX - windowX)
     mouseY = (event.clientY - windowY)
 }
+
+const updateSphere = (event) => {
+    sphere.position.y = window.scrollY * .001
+}
+
+window.addEventListener('scroll', updateSphere);
 
 const clock = new THREE.Clock()
 
