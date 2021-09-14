@@ -18,8 +18,8 @@ const canvas = document.querySelector('canvas.webgl')
 const scene = new THREE.Scene()
 
 // Objects
-const geometry = new THREE.TorusGeometry( .7, .2, 16, 100 );
-//const geometry = new THREE.SphereGeometry( .5, 64, 64 );
+//const geometry = new THREE.TorusGeometry( .7, .2, 16, 100 );
+const geometry = new THREE.SphereGeometry( .5, 64, 64 );
 //const geometry = new THREE.BoxGeometry(1,1,1);
 
 // Materials
@@ -158,11 +158,17 @@ const clock = new THREE.Clock()
 
 const tick = () =>
 {
+    targetX = mouseX * .0001
+    targetY = mouseY * .0001
 
     const elapsedTime = clock.getElapsedTime()
 
     // Update objects
     sphere.rotation.y = .5 * elapsedTime
+
+    sphere.rotation.y += .5 * (targetX - sphere.rotation.y)
+    sphere.rotation.x += .05 * (targetY - sphere.rotation.x)
+    sphere.rotation.z += -.05 * (targetY - sphere.rotation.x)
 
     // Update Orbital Controls
     // controls.update()
