@@ -18,9 +18,9 @@ const canvas = document.querySelector('canvas.webgl')
 const scene = new THREE.Scene()
 
 // Objects
-const geometry = new THREE.TorusGeometry( .7, .2, 16, 100 );
-//const geometry = new THREE.SphereGeometry( .6, 64, 64 );
-const geometry = new THREE.BoxGeometry(1,1,1);
+//const geometry = new THREE.TorusGeometry( .7, .2, 16, 100 );
+const geometry = new THREE.SphereGeometry( .6, 64, 64 );
+//const geometry = new THREE.BoxGeometry(1,1,1);
 
 // Materials
 
